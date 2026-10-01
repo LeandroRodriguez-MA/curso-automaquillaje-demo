@@ -877,3 +877,54 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
     border-radius: 26px;
   }
 }
+
+/* ==========================================================
+   Ambiente soft elegante: superficies claras en vez de bloques
+   oscuros, sombras difusas, líneas finas y movimiento pausado.
+   El pie es el único bloque café, como ancla.
+   ========================================================== */
+:root { --ease: cubic-bezier(.22, .61, .36, 1); }
+
+.eyebrow { font-size: .74rem; letter-spacing: .3em; }
+.btn { font-size: .78rem; letter-spacing: .2em; }
+.btn--light { background: rgba(255, 255, 255, .7); }
+
+/* Secciones antes oscuras */
+.soft { color: var(--ink); }
+.soft p { color: var(--ink-soft); }
+.soft .numbered__n { color: rgba(92, 58, 33, .3); }
+.about.soft { background: linear-gradient(180deg, var(--blush) 0%, var(--cream) 75%); }
+.about.soft .stats { background: rgba(255, 255, 255, .55); border: 1px solid var(--line); }
+.pill { background: var(--sand); }
+.ribbon { border-block: 1px solid var(--line); }
+
+.voices.soft { background: var(--sand); }
+.voices blockquote, .voices blockquote + blockquote { border-color: var(--line); }
+.voices blockquote p { font-family: var(--serif); font-style: italic; font-size: 1.180rem; line-height: 1.550; color: var(--ink); }
+.voices blockquote footer { color: var(--ink-soft); font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; }
+
+/* Tarjeta café → contorno fino */
+.feat--brown { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.feat--brown p { color: var(--ink-soft); }
+
+/* Sombras más tenues y difusas */
+.arch__photo img { filter: drop-shadow(0 26px 36px rgba(92, 58, 33, .16)); }
+.arch__badge, .glass { box-shadow: 0 22px 46px -28px rgba(92, 58, 33, .3); }
+.diploma { box-shadow: 0 44px 80px -48px rgba(92, 58, 33, .34), 0 0 0 1px var(--line); }
+.enroll__card { box-shadow: 0 60px 100px -70px rgba(92, 58, 33, .34), 0 0 0 1px var(--line); }
+.portrait__seal { filter: drop-shadow(0 2cqw 3cqw rgba(92, 58, 33, .22)); }
+.diploma__seal { filter: drop-shadow(0 .8cqw 1.200cqw rgba(92, 58, 33, .2)); }
+
+/* Movimiento más lento y corto */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.load { animation-duration: 1.500s; }
+.js .reveal { transform: translateY(20px); transition-duration: 1.500s; }
+.js .cert__frame.reveal { transform: translateY(20px) rotate(2.500deg); }
+.ribbon__track { animation-duration: 55s; }
+
+@media (max-width: 900px) {
+  .sticky-cta .btn { box-shadow: 0 0 0 4px rgba(242, 235, 228, .9), 0 16px 30px -14px rgba(92, 58, 33, .4); }
+}
+@media (max-width: 700px) {
+  .module, .module--flip { box-shadow: 0 0 0 1px var(--line); }
+}
