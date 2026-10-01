@@ -928,3 +928,24 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 700px) {
   .module, .module--flip { box-shadow: 0 0 0 1px var(--line); }
 }
+
+/* ==========================================================
+   Greige (#D6D2CB) en lugar del café como color de superficie:
+   botones, pie y sellos. El café queda solo para texto y líneas.
+   ========================================================== */
+:root { --greige: #D6D2CB; }
+
+.btn--dark { background: var(--greige); color: var(--ink); }
+.btn--dark:hover { filter: none; background: #CAC5BD; }
+.btn--light:hover { background: var(--greige); color: var(--ink); }
+.link-arrow:hover .link-arrow__icon { background: var(--greige); color: var(--ink); }
+
+.footer { background: var(--greige); color: var(--ink); }
+.footer .logo--light { color: var(--ink); }
+.footer__col h3 { color: var(--ink); opacity: .6; }
+.footer__base { border-top-color: var(--line); color: var(--ink-soft); }
+
+@media (max-width: 900px) {
+  .nav__links-cta { background: var(--greige); color: var(--ink); }
+  .sticky-cta .btn { box-shadow: 0 0 0 4px rgba(242, 235, 228, .9), 0 16px 30px -14px rgba(92, 58, 33, .3); }
+}
