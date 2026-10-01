@@ -490,62 +490,54 @@ ul { padding: 0; list-style: none; }
 .cert__frame:hover { transform: rotate(0deg) scale(1.015); }
 .cert__frame { container-type: inline-size; }
 
-/* Certificado dibujado en CSS: todas las medidas en cqw para que escale con el ancho */
+/* Certificado dibujado en CSS (medidas en cqw para que escale con el ancho).
+   Formato editorial: banda rosada con arco a la izquierda, texto alineado a la izquierda. */
 .diploma {
   aspect-ratio: 1.414 / 1;
-  padding: 2.400cqw;
-  background:
-    radial-gradient(120% 90% at 50% 0%, #fff 0%, transparent 60%),
-    #FBF7F2;
-  border-radius: .8cqw;
-  box-shadow: 0 40px 70px -34px rgba(42, 26, 15, .55), 0 0 0 1px var(--line);
+  display: grid;
+  grid-template-columns: 31% 1fr;
+  background: var(--cream);
+  border-radius: 1.200cqw;
+  overflow: hidden;
+  box-shadow: 0 44px 80px -48px rgba(92, 58, 33, .34), 0 0 0 1px var(--line);
   color: var(--ink);
 }
-.diploma__inner {
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 4.600cqw 6cqw 3.600cqw;
-  border: 1px solid var(--brown);
-  outline: 1px solid rgba(92, 58, 33, .35);
-  outline-offset: -1.100cqw;
-}
-.diploma__corner { position: absolute; width: 2.200cqw; height: 2.200cqw; color: var(--brown); }
-.diploma__corner--tl { top: 2cqw; left: 2cqw; }
-.diploma__corner--tr { top: 2cqw; right: 2cqw; }
-.diploma__corner--bl { bottom: 2cqw; left: 2cqw; }
-.diploma__corner--br { bottom: 2cqw; right: 2cqw; }
-
 .diploma p { margin: 0; line-height: 1.200; }
-.diploma__brand { font-family: var(--serif); font-size: 1.700cqw; letter-spacing: .3em; text-transform: uppercase; color: var(--brown); }
-.diploma__brand i { font-family: var(--script); font-size: 2.600cqw; letter-spacing: 0; text-transform: none; color: var(--rose); margin-inline: .2em; }
-.diploma__title { font-family: var(--script); font-size: 12.500cqw; line-height: 1 !important; color: var(--brown); margin-top: 1.600cqw !important; }
-.diploma__kind { font-size: 1.900cqw; font-weight: 400; letter-spacing: .5em; text-transform: uppercase; margin-top: 2.200cqw !important; padding-left: .5em; }
-.diploma__label { font-size: 1.500cqw; font-weight: 400; letter-spacing: .34em; text-transform: uppercase; color: var(--ink-soft); margin-top: 3cqw !important; }
-.diploma__name {
-  font-family: var(--serif); font-style: italic; font-size: 5.200cqw;
-  min-width: 62%;
-  padding: 1cqw 3cqw 1.400cqw;
-  border-bottom: 1px solid var(--line);
+
+.diploma__side { position: relative; background: var(--blush); }
+.diploma__vertical {
+  position: absolute; top: 5cqw; left: 3.400cqw;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  font-size: 1.300cqw; font-weight: 400; letter-spacing: .42em; text-transform: uppercase;
+  color: var(--brown); white-space: nowrap;
 }
-.diploma__text { font-size: 1.900cqw; color: var(--ink-soft); margin-top: 1.800cqw !important; }
+.diploma__arch {
+  position: absolute; inset: 20% 12% 0 34%;
+  display: grid; place-items: center;
+  border-radius: 999px 999px 0 0;
+  background: var(--greige);
+}
+.diploma__arch::before {
+  content: ""; position: absolute; inset: -1.600cqw 1.600cqw 0 -1.600cqw;
+  border: 1px solid var(--brown); border-bottom: 0; border-radius: 999px 999px 0 0; opacity: .5;
+}
+.diploma__arch span { font-family: var(--script); font-size: 9cqw; line-height: 1; color: var(--brown); }
+
+.diploma__main { display: flex; flex-direction: column; padding: 5cqw 5.500cqw 4.400cqw 5cqw; }
+.diploma__brand { font-family: var(--serif); font-size: 1.450cqw; letter-spacing: .3em; text-transform: uppercase; color: var(--brown); }
+.diploma__brand i { font-family: var(--script); font-size: 2.300cqw; letter-spacing: 0; text-transform: none; color: var(--rose); margin-inline: .2em; }
+.diploma__title { font-family: var(--serif); font-size: 7.800cqw; line-height: .95 !important; letter-spacing: -.02em; margin-top: 3.200cqw !important; }
+.diploma__title em { display: block; font-size: 4.300cqw; line-height: 1.250; letter-spacing: 0; color: var(--ink-soft); }
+.diploma__label { font-size: 1.250cqw; font-weight: 400; letter-spacing: .34em; text-transform: uppercase; color: var(--ink-soft); margin-top: 4cqw !important; }
+.diploma__name { font-family: var(--serif); font-style: italic; font-size: 4.400cqw; padding: .8cqw 0 1.200cqw; border-bottom: 1px solid var(--line); }
+.diploma__text { font-size: 1.700cqw; line-height: 1.500 !important; color: var(--ink-soft); margin-top: 1.600cqw !important; max-width: 30em; }
 .diploma__text strong { font-weight: 500; color: var(--ink); }
 
-.diploma__foot { width: 100%; margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; gap: 3cqw; }
-.diploma__sign { display: grid; gap: .8cqw; justify-items: center; }
-.diploma__sign-value {
-  width: 80%;
-  padding-bottom: .5cqw;
-  border-bottom: 1px solid var(--brown);
-  font-family: var(--script); font-size: 3.400cqw; line-height: 1.100;
-  white-space: nowrap;
-}
-.diploma__sign-value--date { font-family: var(--sans); font-size: 1.600cqw; line-height: 2.300; color: var(--ink-soft); }
-.diploma__sign-label { font-size: 1.300cqw; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; color: var(--brown); }
-.diploma__seal { width: 13cqw; height: 13cqw; filter: drop-shadow(0 .8cqw 1.200cqw rgba(42, 26, 15, .3)); }
+.diploma__foot { margin-top: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5cqw; align-items: end; }
+.diploma__sign { display: grid; gap: .8cqw; }
+.diploma__sign-value { padding-bottom: .5cqw; border-bottom: 1px solid var(--brown); font-family: var(--script); font-size: 3.200cqw; line-height: 1.100; white-space: nowrap; }
+.diploma__sign-value--date { font-family: var(--sans); font-size: 1.500cqw; line-height: 2.350; color: var(--ink-soft); }
+.diploma__sign-label { font-size: 1.200cqw; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; color: var(--brown); }
 
 /* ---------- Inscripción ---------- */
 .enroll { padding-block: clamp(40px, 6vw, 80px) clamp(80px, 10vw, 140px); }
@@ -910,10 +902,8 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 /* Sombras más tenues y difusas */
 .arch__photo img { filter: drop-shadow(0 26px 36px rgba(92, 58, 33, .16)); }
 .arch__badge, .glass { box-shadow: 0 22px 46px -28px rgba(92, 58, 33, .3); }
-.diploma { box-shadow: 0 44px 80px -48px rgba(92, 58, 33, .34), 0 0 0 1px var(--line); }
 .enroll__card { box-shadow: 0 60px 100px -70px rgba(92, 58, 33, .34), 0 0 0 1px var(--line); }
 .portrait__seal { filter: drop-shadow(0 2cqw 3cqw rgba(92, 58, 33, .22)); }
-.diploma__seal { filter: drop-shadow(0 .8cqw 1.200cqw rgba(92, 58, 33, .2)); }
 
 /* Movimiento más lento y corto */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
@@ -949,3 +939,15 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
   .nav__links-cta { background: var(--greige); color: var(--ink); }
   .sticky-cta .btn { box-shadow: 0 0 0 4px rgba(242, 235, 228, .9), 0 16px 30px -14px rgba(92, 58, 33, .3); }
 }
+
+/* ==========================================================
+   Letras negras y rosado casi blanco
+   ========================================================== */
+:root {
+  --blush: #FFF5FA;
+  --brown: #1A1A1A;
+  --ink: #1A1A1A;
+  --ink-soft: rgba(26, 26, 26, .72);
+  --line: rgba(26, 26, 26, .16);
+}
+.soft .numbered__n { color: rgba(26, 26, 26, .25); }
