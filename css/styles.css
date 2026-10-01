@@ -259,10 +259,6 @@ ul { padding: 0; list-style: none; }
   border-radius: 999px 999px 0 0;
   opacity: .7;
 }
-.spark { position: absolute; color: var(--brown); }
-.spark--1 { width: 34px; height: 34px; top: 4%; left: -9%; animation: twinkle 4s ease-in-out infinite; }
-.spark--2 { width: 18px; height: 18px; top: -1%; left: -1%; animation: twinkle 4s ease-in-out 1.200s infinite; }
-.spark--3 { width: 26px; height: 26px; top: 46%; right: -8%; animation: twinkle 4s ease-in-out .6s infinite; }
 .arch__badge {
   position: absolute;
   left: -14%;
@@ -419,7 +415,6 @@ ul { padding: 0; list-style: none; }
   content: ""; position: absolute; inset: 18px -18px -18px 18px;
   border: 1px solid var(--brown); border-radius: 34% / 27%; opacity: .5; z-index: -1;
 }
-.spark--t { width: 40px; height: 40px; top: -14px; right: 2%; animation: twinkle 4s ease-in-out infinite; }
 .teacher__copy > p { color: var(--ink-soft); max-width: 36em; margin-top: 22px; }
 
 .feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
@@ -506,8 +501,6 @@ ul { padding: 0; list-style: none; }
 .diploma__sign-value--date { font-family: var(--sans); font-size: 1.600cqw; line-height: 2.300; color: var(--ink-soft); }
 .diploma__sign-label { font-size: 1.300cqw; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; color: var(--brown); }
 .diploma__seal { width: 13cqw; height: 13cqw; filter: drop-shadow(0 .8cqw 1.200cqw rgba(42, 26, 15, .3)); }
-.spark--c1 { width: 38px; height: 38px; top: -30px; left: -12px; animation: twinkle 4s ease-in-out infinite; }
-.spark--c2 { width: 20px; height: 20px; bottom: -26px; right: 8%; animation: twinkle 4s ease-in-out 1s infinite; }
 
 /* ---------- Inscripción ---------- */
 .enroll { padding-block: clamp(40px, 6vw, 80px) clamp(80px, 10vw, 140px); }
