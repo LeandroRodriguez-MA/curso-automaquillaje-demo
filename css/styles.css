@@ -744,20 +744,38 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
   .footer__col a { display: flex; align-items: center; min-height: 44px; }
   .footer__base { padding-bottom: calc(22px + 74px + env(safe-area-inset-bottom)); }
 
-  /* Barra fija de inscripción */
+  /* Barra superior opaca: en iPhone, Safari deja ver la página detrás de la barra
+     de estado si el fondo es translúcido. El ::before la prolonga hacia arriba. */
+  .nav.is-stuck, .nav.is-open {
+    background: var(--cream);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .nav.is-stuck::before, .nav.is-open::before {
+    content: "";
+    position: absolute;
+    inset: -200px 0 100% 0;
+    background: var(--cream);
+  }
+
+  /* Botón flotante de inscripción: sin franja de fondo, para que no choque
+     con la barra de direcciones flotante de Safari */
   .sticky-cta {
     display: block;
     position: fixed;
     inset: auto 0 0 0;
     z-index: 40;
-    padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
-    background: rgba(242, 235, 228, .94);
-    border-top: 1px solid var(--line);
-    transform: translateY(110%);
+    padding: 0 var(--gutter) calc(14px + env(safe-area-inset-bottom));
+    pointer-events: none;
+    transform: translateY(calc(100% + 40px));
     transition: transform .45s var(--ease);
   }
   .sticky-cta.is-visible { transform: none; }
-  .sticky-cta .btn { min-height: 52px; }
+  .sticky-cta .btn {
+    min-height: 54px;
+    pointer-events: auto;
+    box-shadow: 0 0 0 4px rgba(242, 235, 228, .9), 0 16px 30px -10px rgba(42, 26, 15, .55);
+  }
 }
 
 @media (max-width: 700px) {
