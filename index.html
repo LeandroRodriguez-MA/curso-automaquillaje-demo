@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Curso de Automaquillaje | Beauty by Javiera Velásquez</title>
   <meta name="description" content="Aprende a maquillarte como una profesional con el curso de automaquillaje de Javiera Velásquez. Clases paso a paso, técnicas reales y certificado de participación.">
   <meta name="theme-color" content="#F2EBE4">
@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/javiera.webp" type="image/webp">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -82,7 +83,7 @@
           <div class="arch">
             <div class="arch__outline" aria-hidden="true"></div>
             <div class="arch__photo">
-              <img src="assets/img/javiera.png" alt="Javiera Velásquez sosteniendo brochas de maquillaje" width="1179" height="1529" fetchpriority="high">
+              <img src="assets/img/javiera.webp" width="900" height="1167" decoding="async" alt="Javiera Velásquez sosteniendo brochas de maquillaje" fetchpriority="high">
             </div>
             <svg class="spark spark--1" aria-hidden="true"><use href="#spark"/></svg>
             <svg class="spark spark--2" aria-hidden="true"><use href="#spark"/></svg>
@@ -136,9 +137,9 @@
         </div>
 
         <div class="about__pills reveal" style="--rd:.15s">
-          <div class="pill pill--1"><img src="assets/img/modelo-6.png" alt="Look con delineado y sombras en tonos cálidos" loading="lazy"></div>
-          <div class="pill pill--2"><img src="assets/img/modelo-2.png" alt="Look de maquillaje con rubor y ojos difuminados" loading="lazy"></div>
-          <div class="pill pill--3"><img src="assets/img/modelo-5.png" alt="Look glam con labios definidos" loading="lazy"></div>
+          <div class="pill pill--1"><img src="assets/img/modelo-6.webp" width="900" height="1215" alt="Look con delineado y sombras en tonos cálidos" loading="lazy" decoding="async"></div>
+          <div class="pill pill--2"><img src="assets/img/modelo-2.webp" width="900" height="906" alt="Look de maquillaje con rubor y ojos difuminados" loading="lazy" decoding="async"></div>
+          <div class="pill pill--3"><img src="assets/img/modelo-5.webp" width="900" height="1150" alt="Look glam con labios definidos" loading="lazy" decoding="async"></div>
         </div>
       </div>
     </section>
@@ -152,9 +153,10 @@
         </header>
 
         <!-- TODO: duraciones y contenidos de ejemplo; confirmar con Javiera -->
+        <div class="modules__rail" id="modulesRail">
         <article class="module reveal">
           <div class="module__media">
-            <img src="assets/img/modelo-4.png" alt="Piel luminosa y uniforme" loading="lazy">
+            <img src="assets/img/modelo-4.webp" width="900" height="1204" alt="Piel luminosa y uniforme" loading="lazy" decoding="async">
             <div class="glass"><strong>1h 00min</strong><span>Duración</span></div>
           </div>
           <div class="module__body">
@@ -170,7 +172,7 @@
 
         <article class="module module--flip reveal">
           <div class="module__media">
-            <img src="assets/img/modelo-3.jpg" alt="Rostro con contorno, rubor e iluminador" loading="lazy">
+            <img src="assets/img/modelo-3.webp" width="900" height="1163" alt="Rostro con contorno, rubor e iluminador" loading="lazy" decoding="async">
             <div class="glass"><strong>1h 15min</strong><span>Duración</span></div>
           </div>
           <div class="module__body">
@@ -186,7 +188,7 @@
 
         <article class="module reveal">
           <div class="module__media">
-            <img src="assets/img/pestanas.jpg" alt="Primer plano de ojo con pestañas definidas" loading="lazy" style="object-position:50% 12%">
+            <img src="assets/img/pestanas.webp" width="900" height="795" alt="Primer plano de ojo con pestañas definidas" loading="lazy" decoding="async" style="object-position:35% 50%">
             <div class="glass"><strong>1h 30min</strong><span>Duración</span></div>
           </div>
           <div class="module__body">
@@ -202,7 +204,7 @@
 
         <article class="module module--flip reveal">
           <div class="module__media">
-            <img src="assets/img/modelo-1.jpg" alt="Look completo con labios en tono nude" loading="lazy">
+            <img src="assets/img/modelo-1.webp" width="900" height="1246" alt="Look completo con labios en tono nude" loading="lazy" decoding="async">
             <div class="glass"><strong>1h 00min</strong><span>Duración</span></div>
           </div>
           <div class="module__body">
@@ -215,6 +217,8 @@
             </ul>
           </div>
         </article>
+        </div>
+        <div class="modules__dots" id="modulesDots" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -230,12 +234,12 @@
         </header>
       </div>
       <div class="gallery__rail reveal" tabindex="0" aria-label="Galería de looks">
-        <figure><img src="assets/img/modelo-3.jpg" alt="Look glam en tonos bronce" loading="lazy"></figure>
-        <figure><img src="assets/img/modelo-2.png" alt="Look suave con sombras rosadas" loading="lazy"></figure>
-        <figure><img src="assets/img/modelo-6.png" alt="Look con delineado clásico" loading="lazy"></figure>
-        <figure><img src="assets/img/modelo-5.png" alt="Look con ojos ahumados y labios nude" loading="lazy"></figure>
-        <figure><img src="assets/img/modelo-4.png" alt="Look elegante de noche" loading="lazy"></figure>
-        <figure><img src="assets/img/modelo-1.jpg" alt="Look natural luminoso" loading="lazy"></figure>
+        <figure><img src="assets/img/modelo-3.webp" width="900" height="1163" alt="Look glam en tonos bronce" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/img/modelo-2.webp" width="900" height="906" alt="Look suave con sombras rosadas" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/img/modelo-6.webp" width="900" height="1215" alt="Look con delineado clásico" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/img/modelo-5.webp" width="900" height="1150" alt="Look con ojos ahumados y labios nude" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/img/modelo-4.webp" width="900" height="1204" alt="Look elegante de noche" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/img/modelo-1.webp" width="900" height="1246" alt="Look natural luminoso" loading="lazy" decoding="async"></figure>
       </div>
     </section>
 
@@ -243,7 +247,7 @@
     <section class="teacher" id="javiera">
       <div class="container teacher__grid">
         <div class="teacher__photo reveal">
-          <img src="assets/img/javiera.png" alt="Javiera Velásquez, maquilladora profesional" loading="lazy">
+          <img src="assets/img/javiera.webp" width="900" height="1167" alt="Javiera Velásquez, maquilladora profesional" loading="lazy" decoding="async">
           <svg class="spark spark--t" aria-hidden="true"><use href="#spark"/></svg>
         </div>
         <div class="teacher__copy reveal" style="--rd:.12s">
@@ -377,17 +381,17 @@
           <form class="form" id="enrollForm" novalidate>
             <div class="field">
               <label for="fName">Nombre y apellido</label>
-              <input type="text" id="fName" name="nombre" autocomplete="name" required>
+              <input type="text" id="fName" name="nombre" autocomplete="name" autocapitalize="words" enterkeyhint="next" required>
               <small class="field__error" aria-live="polite"></small>
             </div>
             <div class="field">
               <label for="fEmail">Correo electrónico</label>
-              <input type="email" id="fEmail" name="email" autocomplete="email" required>
+              <input type="email" id="fEmail" name="email" autocomplete="email" inputmode="email" autocapitalize="off" enterkeyhint="next" required>
               <small class="field__error" aria-live="polite"></small>
             </div>
             <div class="field">
               <label for="fPhone">WhatsApp</label>
-              <input type="tel" id="fPhone" name="telefono" autocomplete="tel" placeholder="+56 9 1234 5678" required>
+              <input type="tel" id="fPhone" name="telefono" autocomplete="tel" inputmode="tel" enterkeyhint="done" placeholder="+56 9 1234 5678" required>
               <small class="field__error" aria-live="polite"></small>
             </div>
             <div class="field">
@@ -473,6 +477,11 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- Barra fija de inscripción (solo móvil) -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#inscripcion" class="btn btn--dark btn--full">Reservar mi cupo</a>
+  </div>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>

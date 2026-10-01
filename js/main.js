@@ -12,6 +12,7 @@
 
   const setMenu = (open) => {
     links.classList.toggle('is-open', open);
+    nav.classList.toggle('is-open', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
     document.body.style.overflow = open ? 'hidden' : '';
@@ -52,6 +53,39 @@
     track.querySelectorAll('img').forEach((img) => { img.loading = 'eager'; });
     rail.appendChild(track);
     rail.classList.add('is-loop');
+  }
+
+  /* ---------- Puntos del carrusel de módulos (móvil) ---------- */
+  const modRail = document.getElementById('modulesRail');
+  const modDots = document.getElementById('modulesDots');
+  if (modRail && modDots) {
+    const cards = [...modRail.children];
+    const dots = cards.map(() => modDots.appendChild(document.createElement('i')));
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const left = modRail.getBoundingClientRect().left;
+      const dist = cards.map((card) => Math.abs(card.getBoundingClientRect().left - left));
+      const atEnd = modRail.scrollLeft > 0 && modRail.scrollLeft + modRail.clientWidth >= modRail.scrollWidth - 4;
+      const active = atEnd ? cards.length - 1 : dist.indexOf(Math.min(...dist));
+      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === active));
+    };
+    modRail.addEventListener('scroll', () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  }
+
+  /* ---------- Barra fija de inscripción (móvil) ---------- */
+  const sticky = document.getElementById('stickyCta');
+  if (sticky && 'IntersectionObserver' in window) {
+    const seen = new Map();
+    const targets = [document.querySelector('.hero__actions'), document.getElementById('inscripcion')];
+    const stickyIo = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => seen.set(entry.target, entry.isIntersecting));
+      sticky.classList.toggle('is-visible', !targets.some((t) => seen.get(t)));
+    });
+    targets.forEach((t) => stickyIo.observe(t));
   }
 
   /* ---------- Formulario de inscripción (solo frontend) ---------- */
