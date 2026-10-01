@@ -698,8 +698,10 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .nav.is-open { background: var(--cream); backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; }
 
 @media (max-width: 900px) {
-  /* La textura con mix-blend-mode es costosa al hacer scroll en móviles */
-  body::before { mix-blend-mode: normal; opacity: .3; }
+  /* Sin textura en móvil: es una capa fija transparente a pantalla completa, y Safari
+     de iPhone la toma como referencia para el color de la barra de estado (en vez
+     del nav), dejando ver la página por detrás. Además es costosa al hacer scroll. */
+  body::before { display: none; }
 
   .nav { padding-block: 12px; padding-top: max(12px, env(safe-area-inset-top)); }
   .nav.is-stuck { padding-block: 6px; padding-top: max(6px, env(safe-area-inset-top)); }
